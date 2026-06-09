@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAJI | Essência e Luz - Velas Aromáticas</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="logo.jpeg" alt="MAJI Logo" class="nav-logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#modelos">Inspirações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="banner 1.jpeg" alt="Banner Maji Ébano e Pêssego">
+                <div class="slide-overlay">
+                    <h2>Sofisticação em cada detalhe</h2>
+                    <p>Descubra nossa vela de massagem Ébano e Pêssego.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="banner 2.jpeg" alt="Banner Maji Vanilla">
+                <div class="slide-overlay">
+                    <h2>A doçura clássica da Vanilla</h2>
+                    <p>Crie uma atmosfera acolhedora e iluminada.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="banner 3.jpeg" alt="Banner Velas Aromáticas">
+                <div class="slide-overlay">
+                    <h2>Essência & Luz</h2>
+                    <p>Velas artesanais feitas para despertar sentidos.</p>
+                </div>
+            </div>
+
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="produtos" class="products-section">
+        <div class="section-title">
+            <span>Coleções</span>
+            <h2>Nossos Produtos</h2>
+            <hr class="title-divider">
+        </div>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="foto 2.jpeg" alt="Velas de Vanilla em Torre">
+                </div>
+                <h3>Vela Aromática Vanilla</h3>
+                <p class="product-desc">Copo de vidro com tampa de madeira minimalista.</p>
+                <span class="product-price">Consulte Valores</span>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="foto 1.jpeg" alt="Velas em formato de Flores">
+                </div>
+                <h3>Velas Esculturais Margaridas</h3>
+                <p class="product-desc">Design exclusivo em formato de flores para decorar e perfumar.</p>
+                <span class="product-price">Consulte Valores</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="modelos" class="models-section">
+        <div class="section-title">
+            <span>Lifestyle</span>
+            <h2>Espaços & Modelos</h2>
+            <hr class="title-divider">
+        </div>
+
+        <div class="models-grid">
+            <div class="model-box placeholder-box">
+                <div class="placeholder-content">
+                    <span>[ Espaço para foto da Modelo usando a Vela de Massagem ]</span>
+                </div>
+            </div>
+            <div class="model-box placeholder-box">
+                <div class="placeholder-content">
+                    <span>[ Espaço para foto de ambiente ou modelo acendendo a vela ]</span>
+                </div>
+            </div>
+            <div class="model-box placeholder-box">
+                <div class="placeholder-content">
+                    <span>[ Espaço para foto detalhe/mãos segurando o produto ]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo.jpeg" alt="MAJI Logo">
+                <p>Essência & Luz | Velas Aromáticas</p>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Faça seu Pedido</h3>
+                <p>Entre em contato conosco para encomendas personalizadas e catálogo completo:</p>
+                <a href="https://wa.me/5500000000000" target="_blank" class="whatsapp-btn">
+                    📞 Telefone / WhatsApp: (00) 00000-0000
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MAJI Velas Aromáticas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+        }
+
+        function moveSlide(step) {
+            currentSlide += step;
+            showSlide(currentSlide);
+        }
+
+        // Auto-play do carrossel a cada 5 segundos
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>

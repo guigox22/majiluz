@@ -1,0 +1,397 @@
+/* RESET DE ESTILOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* PALETA DE CORES & VARIÁVEIS */
+:root {
+    --bg-dark: #0a0a0a;       /* Preto Luxo predominante */
+    --bg-card: #141414;       /* Tom escuro secundário para cartões */
+    --gold-light: #e6d5c3;     /* Bege claro extraído do fundo do seu logo */
+    --gold-main: #c5a880;      /* Dourado sofisticado baseado na tipografia MAJI */
+    --text-white: #ffffff;
+    --text-muted: #a0a0a0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* CABEÇALHO / NAVIGATION */
+.main-header {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 60px;
+    width: auto;
+    border-radius: 50%; /* Deixa o logo redondo sutilmente se preferir, ou remova */
+    border: 1px solid var(--gold-main);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--gold-main);
+}
+
+/* CARROSSEL DE BANNERS */
+.carousel-section {
+    margin-top: 80px; /* Desconto do header fixo */
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%); /* Escurece levemente o fundo para o texto aparecer */
+}
+
+.slide-overlay {
+    position: absolute;
+    text-align: center;
+    color: var(--text-white);
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.slide-overlay h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.slide-overlay p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Botões do Carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--gold-main);
+    color: var(--gold-light);
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: var(--gold-main);
+    color: var(--bg-dark);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* TÍTULOS DAS SEÇÕES */
+.section-title {
+    text-align: center;
+    margin: 80px auto 40px auto;
+}
+
+.section-title span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold-main);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section-title h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+}
+
+.title-divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--gold-main);
+    border: none;
+    margin: 15px auto 0 auto;
+}
+
+/* PRODUTOS (GRID) */
+.products-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(197, 168, 128, 0.1);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-main);
+}
+
+.product-img-wrapper {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--gold-light);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.product-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    height: 40px; /* mantém o alinhamento */
+}
+
+.product-price {
+    font-size: 1rem;
+    color: var(--gold-main);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* MODELOS / INSPIRAÇÃO (QUADRADOS PLACEHOLDER) */
+.models-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.model-box {
+    aspect-ratio: 1 / 1; /* Garante que o container seja um quadrado perfeito */
+    background-color: #1a1a1a;
+    border: 2px dashed rgba(197, 168, 128, 0.3);
+    border-radius: 4px;
+    position: relative;
+    transition: border-color 0.3s;
+}
+
+.model-box:hover {
+    border-color: var(--gold-main);
+}
+
+.placeholder-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+}
+
+.placeholder-content span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* RODAPÉ E CONTATO */
+.main-footer {
+    background-color: #050505;
+    border-top: 1px solid rgba(197, 168, 128, 0.2);
+    padding: 60px 20px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-main);
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+}
+
+.footer-contact {
+    max-width: 500px;
+}
+
+.footer-contact h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    margin-bottom: 15px;
+}
+
+.footer-contact p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--gold-main);
+    color: var(--gold-main);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: var(--gold-main);
+    color: var(--bg-dark);
+    box-shadow: 0 4px 15px rgba(197, 168, 128, 0.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* RESPONSIVIDADE PARA CELULARES */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .carousel-section {
+        height: 350px;
+    }
+    .slide-overlay h2 {
+        font-size: 2rem;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
