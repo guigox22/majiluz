@@ -672,31 +672,6 @@ ul { list-style: none; }
   color: rgba(255,255,255,0.35);
 }
 
-/* ========== WHATSAPP FLOAT ========== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 200;
-  background: var(--whatsapp);
-  color: var(--branco);
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: transform var(--transition), box-shadow var(--transition);
-  overflow: hidden;
-}
-
-.whatsapp-float svg {
-  width: 30px !important;
-  height: 30px !important;
-  max-width: 30px !important;
-  flex-shrink: 0;
-}
 
 /* ========== RESPONSIVO ========== */
 @media (max-width: 1024px) {
