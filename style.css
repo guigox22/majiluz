@@ -726,3 +726,16 @@ ul { list-style: none; }
   .galeria-item.grande { grid-column: span 1; aspect-ratio: 1; }
   .header-whatsapp span { display: none; }
 }
+
+/* Kit invertido (foto à direita) */
+.experiencia-reverse {
+  direction: rtl;
+}
+.experiencia-reverse > * {
+  direction: ltr;
+}
+
+/* Fundo alternado para diferenciar as seções */
+.experiencia-dark {
+  background: var(--creme);
+}
