@@ -739,3 +739,14 @@ ul { list-style: none; }
 .experiencia-dark {
   background: var(--creme);
 }
+
+/* Corrige botão flutuante WhatsApp */
+.whatsapp-float {
+  overflow: hidden;
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
