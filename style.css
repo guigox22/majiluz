@@ -688,13 +688,14 @@ ul { list-style: none; }
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37,211,102,0.4);
   transition: transform var(--transition), box-shadow var(--transition);
+  overflow: hidden;
 }
 
-.whatsapp-float svg { width: 30px; height: 30px; }
-
-.whatsapp-float:hover {
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+.whatsapp-float svg {
+  width: 30px !important;
+  height: 30px !important;
+  max-width: 30px !important;
+  flex-shrink: 0;
 }
 
 /* ========== RESPONSIVO ========== */
@@ -738,15 +739,4 @@ ul { list-style: none; }
 /* Fundo alternado para diferenciar as seções */
 .experiencia-dark {
   background: var(--creme);
-}
-
-/* Corrige botão flutuante WhatsApp */
-.whatsapp-float {
-  overflow: hidden;
-}
-
-.whatsapp-float svg {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
 }
